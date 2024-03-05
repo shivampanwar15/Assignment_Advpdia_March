@@ -3,7 +3,7 @@ const MongoString = process.env.MONGODB_URI;
 console.log(MongoString);
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb+srv://shivampanwar:asdfghjkl@clustervoosh.j8yy2b0.mongodb.net/?retryWrites=true&w=majority&appName=ClusterVoosh', {
+        await mongoose.connect(MongoString, {
             useNewUrlParser: true,
         });
         console.log('MongoDB Connected');
