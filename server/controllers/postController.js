@@ -8,7 +8,6 @@ const postController = {
       res.status(200).json(posts);
 
     } catch (error) {
-      console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
     }
   },
@@ -19,12 +18,11 @@ const postController = {
     
       const postData = req.body;
 
-      const newPost = await postService.createPost(postData);
-      res.status(201).json(newPost);
-      
+      const response = await postService.createPost(postData);
+  
+      res.status(201).json({response});
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal Server Error' });
+      res.status(500).json({ success : false,  message: 'Internal Server Error' });
     }
   },
 };

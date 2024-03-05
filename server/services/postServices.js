@@ -25,11 +25,10 @@ const postService = {
       })
 
       await newPost.save();
-      
+      return {success: true, message:"Added"}
     } catch (error) {
-      
+      return {success : false , message : 'Internal Server Error'}
     }
-
   }
 
 

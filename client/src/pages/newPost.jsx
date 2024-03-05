@@ -28,15 +28,12 @@ export default function NewPost() {
           body: JSON.stringify({ title: post.title, content: post.content})
         });
 
-        const jsonData = await response;
-        console.log(jsonData);
-     
+        const jsonData =  await response.json();
     
         if (!jsonData.success) {
           alert("Try again to create. Please ensure that you Logged In");
         }
         else {
-          console.log("Post added !");
           navigate("/posts");
         }
       }

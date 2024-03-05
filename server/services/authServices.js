@@ -34,7 +34,6 @@ const authService = {
         return {success:true};
       }
     } catch (error) {
-      console.error(error);
       return { success: false, message: 'Internal Server Error' };
     }
   },
@@ -57,7 +56,6 @@ const authService = {
 
       return {success: true, message: 'Login successful', token };
     } catch (error) {
-      console.error(error);
       return { success: false, message: 'Internal Server Error' };
     }
   },

@@ -16,7 +16,6 @@ const authController = {
             }
 
         } catch (error) {
-            console.error(error);
             res.status(500).json({ success:false, message: response.message  });
         }
     },
@@ -34,7 +33,6 @@ const authController = {
             }
 
         } catch (error) {
-            console.error(error);
             res.status(500).json({ success:false, message: 'Internal Server Error' });
         }
     },
